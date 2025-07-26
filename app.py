@@ -35,7 +35,7 @@ app.register_blueprint(menu_bp, url_prefix='/api')
 
 @app.route('/')
 def index():
-    return {'message': 'Café Fausse API is running!', 'status': 'success'}
+    return {'message': 'Cafe Fausse API is running!', 'status': 'success'}
 
 @app.route('/health')
 def health_check():

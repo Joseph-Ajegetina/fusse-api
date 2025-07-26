@@ -112,6 +112,7 @@ The API will be available at `http://localhost:5000`
 ### Reservations
 - `POST /api/reservations` - Create a new reservation
 - `POST /api/reservations/availability` - Check table availability
+- `GET /api/reservations/available-slots` - Get available time slots for a date
 - `GET /api/reservations/<id>` - Get reservation details
 - `PUT /api/reservations/<id>` - Update reservation status
 
@@ -155,6 +156,12 @@ curl -X POST http://localhost:5000/api/reservations/availability \
   }'
 ```
 
+### Get Available Time Slots
+
+```bash
+curl "http://localhost:5000/api/reservations/available-slots?date=2024-01-15&num_of_guests=4"
+```
+
 ### Get Full Menu
 
 ```bash
@@ -191,6 +198,9 @@ The application implements the following key models:
 - Randomly assigns available tables that can accommodate party size
 - Prevents double bookings
 - Supports up to 12 guests per reservation
+- **Time Slot Generation**: Creates 30-minute intervals based on restaurant hours
+- **Operating Hours**: Monday-Saturday 5:00PM-11:00PM, Sunday 5:00PM-9:00PM
+- **Available Slots API**: Returns all available time slots for a given date and party size
 
 ### Table Management
 - 30 tables total (as per requirements)

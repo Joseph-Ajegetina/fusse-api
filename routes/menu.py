@@ -45,7 +45,6 @@ def get_categories():
     """
     try:
         categories = MenuCategory.query.filter_by(is_active=True).order_by(MenuCategory.display_order).all()
-        
         return jsonify({
             'categories': [cat.to_dict() for cat in categories]
         }), 200
