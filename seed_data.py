@@ -19,7 +19,7 @@ def seed_menu_data():
     with app.app_context():
         try:
             # Check if menu data already exists
-            if MenuCategory.query.first():
+            if MenuCategory.query.first() and MenuItem.query.first():
                 print("Menu data already exists. Skipping menu seeding.")
                 return
             
@@ -50,6 +50,7 @@ def seed_menu_data():
                     'name': 'Bruschetta',
                     'description': 'Fresh tomatoes, basil, olive oil, and toasted baguette slices',
                     'price': 8.50,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753924508/cafe-fusse/main/brusttac.png',
                     'order': 1
                 },
                 {
@@ -57,6 +58,7 @@ def seed_menu_data():
                     'name': 'Caesar Salad',
                     'description': 'Crisp romaine with homemade Caesar dressing',
                     'price': 9.00,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753924422/cafe-fusse/main/cfe699e3-eb10-4a95-be19-20668140c1f8.png',
                     'order': 2
                 },
                 
@@ -66,6 +68,7 @@ def seed_menu_data():
                     'name': 'Grilled Salmon',
                     'description': 'Served with lemon butter sauce and seasonal vegetables',
                     'price': 22.00,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753924401/cafe-fusse/main/39595512-320a-482e-bc47-1e58071302ff.png',
                     'order': 1
                 },
                 {
@@ -73,6 +76,7 @@ def seed_menu_data():
                     'name': 'Ribeye Steak',
                     'description': '12 oz prime cut with garlic mashed potatoes',
                     'price': 28.00,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753922657/cafe-fusse/signatures/Ribeye%20Steak.png',
                     'order': 2
                 },
                 {
@@ -80,6 +84,7 @@ def seed_menu_data():
                     'name': 'Vegetable Risotto',
                     'description': 'Creamy Arborio rice with wild mushrooms',
                     'price': 18.00,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753923529/cafe-fusse/main/vegetable-risotto-creamy-arborio-rice-with-wild-mu_zrlxl8.png',
                     'order': 3
                 },
                 
@@ -89,6 +94,7 @@ def seed_menu_data():
                     'name': 'Tiramisu',
                     'description': 'Classic Italian dessert with espresso and mascarpone',
                     'price': 7.50,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753923525/cafe-fusse/desserts/tiramisu-classic-italian-dessert-with-espresso-and_g5xgit.png',
                     'order': 1
                 },
                 {
@@ -96,6 +102,7 @@ def seed_menu_data():
                     'name': 'Chocolate Lava Cake',
                     'description': 'Warm chocolate cake with molten center and vanilla ice cream',
                     'price': 8.00,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753922945/cafe-fusse/signatures/lava%20cake.png',
                     'order': 2
                 },
                 
@@ -105,6 +112,7 @@ def seed_menu_data():
                     'name': 'Red Wine (Glass)',
                     'description': 'A selection of Italian reds',
                     'price': 10.00,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753923462/cafe-fusse/drinks/red-wine--glass-_aqegnp.png',
                     'order': 1
                 },
                 {
@@ -112,6 +120,7 @@ def seed_menu_data():
                     'name': 'White Wine (Glass)',
                     'description': 'Crisp and refreshing',
                     'price': 9.00,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753923465/cafe-fusse/drinks/white-wine--glass-_ryalld.png',
                     'order': 2
                 },
                 {
@@ -119,6 +128,7 @@ def seed_menu_data():
                     'name': 'Craft Beer',
                     'description': 'Local artisan brews',
                     'price': 6.00,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753923465/cafe-fusse/drinks/craft-beer_g7vwwc.png',
                     'order': 3
                 },
                 {
@@ -126,6 +136,7 @@ def seed_menu_data():
                     'name': 'Espresso',
                     'description': 'Strong and aromatic',
                     'price': 3.00,
+                    'image_url': 'https://res.cloudinary.com/duym3iexv/image/upload/v1753923467/cafe-fusse/drinks/espresso_eidkih.png',
                     'order': 4
                 }
             ]
@@ -137,6 +148,7 @@ def seed_menu_data():
                     item_name=item_data['name'],
                     description=item_data['description'],
                     price=item_data['price'],
+                    image_url=item_data['image_url'],
                     display_order=item_data['order'],
                     is_available=True
                 )

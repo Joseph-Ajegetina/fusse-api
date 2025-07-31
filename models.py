@@ -111,6 +111,7 @@ class MenuItem(db.Model):
     item_name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text, nullable=True)
     price = db.Column(db.Numeric(10, 2), nullable=False)
+    image_url = db.Column(db.String(500), nullable=True)  # URL or path to menu item image
     is_available = db.Column(db.Boolean, default=True, nullable=False)
     display_order = db.Column(db.Integer, default=0)
     
@@ -121,6 +122,7 @@ class MenuItem(db.Model):
             'item_name': self.item_name,
             'description': self.description,
             'price': float(self.price) if self.price else 0,
+            'image_url': self.image_url,
             'is_available': self.is_available,
             'display_order': self.display_order
         }
