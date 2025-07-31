@@ -36,25 +36,13 @@ fusse-api/
 
 ## Setup Instructions
 
-### 1. Environment Setup
-
-The virtual environment is already created. Activate it:
-
-```bash
-# On macOS/Linux
-source env/bin/activate
-
-# On Windows
-env\Scripts\activate
-```
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Database Configuration
+### 2. Database Configuration
 
 Create a `.env` file in the project root:
 
@@ -68,7 +56,7 @@ FLASK_DEBUG=True
 DATABASE_URL=postgresql://cafe_user:cafe_password@localhost:5432/cafe_fausse_db
 
 # Application Settings
-CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+CORS_ORIGINS=http://localhost:5000,http://127.0.0.1:3000
 ```
 
 ### 4. PostgreSQL Setup
@@ -228,16 +216,6 @@ This API is designed to work with a React frontend. Key integration points:
 - Email validation is enforced for newsletter subscriptions
 - The API includes comprehensive error handling and logging
 - Database migrations can be managed with Flask-Migrate
-
-## Requirements Compliance
-
-This backend fulfills all functional requirements from the SRS:
-
-- ✅ FR-6 to FR-9: Complete reservation system
-- ✅ FR-15 to FR-16: Newsletter subscription with validation
-- ✅ FR-17 to FR-18: PostgreSQL database with required tables and logic
-- ✅ Menu data serving (FR-5 categories and items)
-- ✅ Table availability checking and random assignment
 
 ## Testing
 
